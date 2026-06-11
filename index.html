@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroVida: Equilíbrio Verde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BioTransmissão Sustentável</h1>
+        <p>Produza em massa, mas proteja com consciência.</p>
+    </header>
+
+    <main class="game-container">
+        <!-- Painel de Pontuação e Recursos -->
+        <section class="dashboard">
+            <div class="stat-box">
+                <!-- Fallback: se não achar a imagem moeda.png, mostra o emoji 💰 -->
+                <img src="moeda.png" alt="💰" class="stat-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+                <span class="emoji-fallback" style="display:none; font-size: 2rem;">💰</span>
+                <div class="stat-info">
+                    <label>Lucro (Agro Forte)</label>
+                    <span id="moedas">100</span>
+                </div>
+            </div>
+            <div class="stat-box">
+                <!-- Fallback: se não achar a imagem planta.png, mostra o emoji 🌱 -->
+                <img src="planta.png" alt="🌱" class="stat-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+                <span class="emoji-fallback" style="display:none; font-size: 2rem;">🌱</span>
+                <div class="stat-info">
+                    <label>Qualidade do solo</label>
+                    <div class="progress-bar">
+                        <div id="barra-ambiente" style="width: 80%;"></div>
+                    </div>
+                    <span id="texto-ambiente">80%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Área de Ações -->
+        <section class="game-actions">
+            <h2>Analíse sua Estratégia de plantio</h2>
+            <div class="cards-container">
+                <!-- Opção 1 -->
+                <div class="card card-intensivo">
+                    <h3>Monocultura Intensiva</h3>
+                    <p>Alta produção de grãos a curto prazo, mas desgasta o solo.</p>
+                    <p class="custo">Custo: 30 moedas</p>
+                    <p class="retorno positivo">+60 Moedas</p>
+                    <p class="retorno negativo">-20% Saúde Ambiental</p>
+                    <button onclick="plantar('intensivo')">Iniciar Plantio</button>
+                </div>
+
+                <!-- Opção 2 -->
+                <div class="card card-agrofloresta">
+                    <h3>Sistema Agroflorestal</h3>
+                    <p>Produção diversificada em harmonia com árvores nativas.</p>
+                    <p class="custo">Custo: 50 moedas</p>
+                    <p class="retorno positivo">+40 Moedas</p>
+                    <p class="retorno positivo">+15% Saúde Ambiental</p>
+                    <button onclick="plantar('agrofloresta')">Iniciar Plantio</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registro de Eventos -->
+        <section class="log-section">
+            <h3>Diário do Campo</h3>
+            <p id="mensagem-sistema">Bem-vindo à fazenda! Mantenha o equilíbrio para vencer.</p>
+        </section>
+    </main>
+
+    <!-- Tela do Minijogo do Trator (Escondida por padrão) -->
+    <div id="tela-trator" class="modal-trator">
+        <div class="conteudo-trator">
+            <h2>🚜 Máquinas no Campo!</h2>
+            <p>Sua fazenda cresceu! Clique rápido no trator em movimento para coletar o bônus de produção!</p>
+            <div class="area-animacao">
+                <!-- Fallback: se não achar a imagem trator.png, mostra o emoji 🚜 grande e clicável -->
+                <img id="trator-clicavel" src="trator.png" alt="🚜" onclick="clicarNoTrator()" onerror="this.removeAttribute('src'); this.style.fontSize='3.5rem'; this.style.lineHeight='70px'; this.style.textAlign='center';">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+           <div class="area-animacao">Fique atento para não degradar o solo.</div> <img id="img03.jpeg-clicavel" src="img03.jpeg" cor de fundo="img03.jpeg-clicavel"
+           <button onclick="cuidar('img03')">Alerta agroflorestal!</button>
+           <!-- Tela de Alerta de Plantio (Escondida por padrão) -->
+<div id="alerta-plantio" class="modal-alerta" style="display: none;">
+    <div class="conteudo-alerta">
+        <h2>⚠️ Alerta de Plantio!</h2>
+        <p>Atenção! Fique atento para não degradar o solo de sua fazenda.</p>
+        
+        <!-- Área da Imagem -->
+        <div class="imagem-alerta-container">
+            <img src="img03.jpeg" alt="Alerta Agroflorestal" class="img-alerta">
+        </div>
+        
+        <button onclick="fecharAlerta()">Entendido</button>
+    </div>
+</div>
+<button onclick="cuidar('img03')">Alerta agroflorestal!</button>
